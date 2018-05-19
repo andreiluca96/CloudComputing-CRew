@@ -27,8 +27,9 @@ WildRydes.map = WildRydes.map || {};
         console.log("hello");
         var projectName = $('#projectNameId').val();
         var projectLink = $('#projectLinkId').val();
+        var commit = $('#commitId').val();
         event.preventDefault();
-        addProject(projectName, projectLink,
+        addProject(projectName, projectLink, commit,
             function addProjectSuccess() {
                 console.log('Successfully added project!');
                 window.location.href = 'index.html';
@@ -39,7 +40,7 @@ WildRydes.map = WildRydes.map || {};
         );
     }
 
-    function addProject(projectName, projectLink, onSuccess, onFailure) {
+    function addProject(projectName, projectLink, commit, onSuccess, onFailure) {
         $.ajax({
             method: 'POST',
             url: _config.api.projectInvokeUrl + '/projects',
@@ -48,7 +49,8 @@ WildRydes.map = WildRydes.map || {};
             },
             data: JSON.stringify({
                 ProjectName: projectName,
-                ProjectLink: projectLink
+                ProjectLink: projectLink,
+                Commit: commit
             }),
             contentType: 'application/json',
             success: onSuccess,
