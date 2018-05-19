@@ -9,11 +9,11 @@ WildRydes.map = WildRydes.map || {};
         if (token) {
             authToken = token;
         } else {
-            window.location.href = '/signin.html';
+            window.location.href = '/index.html';
         }
     }).catch(function handleTokenError(error) {
         alert(error);
-        window.location.href = '/signin.html';
+        window.location.href = '/index.html';
     });
 
     function requestUnicorn(pickupLocation) {
@@ -80,7 +80,7 @@ WildRydes.map = WildRydes.map || {};
         $('#signOut').click(function() {
             WildRydes.signOut();
             alert("You have been signed out.");
-            window.location = "signin.html";
+            window.location = "index.html";
         });
         $(WildRydes.map).on('pickupChange', handlePickupChanged);
 
