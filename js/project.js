@@ -20,16 +20,19 @@ WildRydes.map = WildRydes.map || {};
     });
 
     $(function onDocReady() {
-        $('#addProjectForm').submit(handleAddProject);
+
+        $('#msform').submit(handleAddProject);
     });
 
     function handleAddProject(event) {
-        console.log("hello");
-        var projectName = $('#projectNameId').val();
-        var projectLink = $('#projectLinkId').val();
-        var commit = $('#commitId').val();
+        var owner = $("#projectOwnerId").val();
+        var name = $("#projectNameId").val();
+        var sha = $("#projectFileId").val();
+
+        console.log(sha);
+
         event.preventDefault();
-        addProject(projectName, projectLink, commit,
+        addProject(name, owner, sha,
             function addProjectSuccess() {
                 console.log('Successfully added project!');
                 window.location.href = 'index.html';
@@ -40,7 +43,7 @@ WildRydes.map = WildRydes.map || {};
         );
     }
 
-    function addProject(projectName, projectLink, commit, onSuccess, onFailure) {
+    function addProject(name, owner, commit, onSuccess, onFailure) {
         $.ajax({
             method: 'POST',
             url: _config.api.projectInvokeUrl + '/projects',
@@ -48,8 +51,8 @@ WildRydes.map = WildRydes.map || {};
                 Authorization: authToken
             },
             data: JSON.stringify({
-                ProjectName: projectName,
-                ProjectLink: projectLink,
+                Name: name,
+                Owner: owner,
                 Commit: commit
             }),
             contentType: 'application/json',
