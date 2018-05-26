@@ -55,6 +55,25 @@ WildRydes.map = WildRydes.map || {};
 
     var fillProjects = function (result) {
         console.log(result);
+        result.forEach(item => {
+            console.log(item);
+            var card = $("<div/>").attr("class", "card transition");
+            var link = $("<a/>").attr({"class": "cta", "href": "#"}).text("See CodeReview");
+            var onClickDiv = $("<div/>").attr("class", "cta-container transition");
+            var cardCircleTransition = $("<div/>").attr("class", "card_circle transition");
+            var title = $("<h2/>").attr("class", "transition").text(item.ProjectName);
+            var projectOwner = $("<p/>").text(item.ProjectOwner);
+
+            card.append(title);
+            card.append(projectOwner);
+            onClickDiv.append(link);
+            card.append(onClickDiv);
+            card.append(cardCircleTransition);
+
+
+            $("#card-wrapper").append(card);
+
+        });
     };
 
 
