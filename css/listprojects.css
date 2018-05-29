@@ -81,7 +81,7 @@ body {
 }
 
 .card_circle {
-    background: url('http://lorempixel.com/400/200') no-repeat center bottom;
+    /*background: url('http://lorempixel.com/400/200') no-repeat center bottom;*/
     background-color: #3487f7;
     background-size: cover;
     border-radius: 50%;

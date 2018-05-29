@@ -61,12 +61,14 @@ WildRydes.map = WildRydes.map || {};
             var card = $("<div/>").attr("class", "card transition");
             var link = $("<a/>").attr({"class": "cta", "href": "#"}).text("See CodeReview");
             var onClickDiv = $("<div/>").attr("class", "cta-container transition");
-            var cardCircleTransition = $("<div/>").attr("class", "card_circle transition");
+            var cardCircleTransition = $("<div/>")
+                .attr("class", "card_circle transition")
+                .attr("style", "background: url(\"" + item.Image + "\") no-repeat center bottom;");
             var title = $("<h2/>").attr("class", "transition").text(item.ProjectName);
-            var projectOwner = $("<p/>").text(item.ProjectOwner);
+            var description = $("<p/>").text(item.ProjectOwner + ": " + item.Description);
 
             card.append(title);
-            card.append(projectOwner);
+            card.append(description);
             onClickDiv.append(link);
             card.append(onClickDiv);
             card.append(cardCircleTransition);
