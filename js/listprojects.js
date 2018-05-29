@@ -55,6 +55,7 @@ WildRydes.map = WildRydes.map || {};
 
     var fillProjects = function (result) {
         console.log(result);
+        $("#card-wrapper").empty();
         result.forEach(item => {
             console.log(item);
             var card = $("<div/>").attr("class", "card transition");

@@ -15,23 +15,29 @@
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/listprojects.css">
     <link rel="stylesheet" href="css/message.css">
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">CRew</a>
-        </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Add Project</a></li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CRew</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="./listprojects.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./addproject.html">Add Project</a>
+            </li>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span>Logout</a></li>
+    </div>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav2">
+        <ul class="navbar-nav">
+            <li class="nav-item"><a lass="nav-link" href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+            </li>
         </ul>
     </div>
 </nav>
