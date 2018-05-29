@@ -50,6 +50,7 @@
         <li class="active">Basic details</li>
         <li>Choose commit</li>
         <li>Verify</li>
+        <li>Description</li>
     </ul>
     <!-- fieldsets -->
     <fieldset>
@@ -72,6 +73,17 @@
         <h2 class="fs-title">Files</h2>
 
         <div id="accordion">
+        </div>
+
+        <input type="button" name="previous" class="previous action-button" value="Previous"/>
+        <input id="descriptionId" type="button" name="next" class="next action-button" value="Next"/>
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">Description</h2>
+
+        <div class="form-group">
+            <label for="descriptionTextareaId">Enter the question or the description of your commit</label>
+            <textarea class="form-control" id="descriptionTextareaId" rows="3"></textarea>
         </div>
 
         <input type="button" name="previous" class="previous action-button" value="Previous"/>

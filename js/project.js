@@ -28,11 +28,13 @@ WildRydes.map = WildRydes.map || {};
         var owner = $("#projectOwnerId").val();
         var name = $("#projectNameId").val();
         var sha = $("#projectFileId").val();
+        var description = $("#descriptionTextareaId").val();
 
-        console.log(sha);
+        console.log(description);
+
 
         event.preventDefault();
-        addProject(name, owner, sha,
+        addProject(name, owner, sha, description,
             function addProjectSuccess() {
                 console.log('Successfully added project!');
                 window.location.href = 'index.html';
@@ -43,7 +45,7 @@ WildRydes.map = WildRydes.map || {};
         );
     }
 
-    function addProject(name, owner, commit, onSuccess, onFailure) {
+    function addProject(name, owner, commit, description, onSuccess, onFailure) {
         $.ajax({
             method: 'POST',
             url: _config.api.projectInvokeUrl + '/projects',
@@ -53,7 +55,8 @@ WildRydes.map = WildRydes.map || {};
             data: JSON.stringify({
                 Name: name,
                 Owner: owner,
-                Commit: commit
+                Commit: commit,
+                Description: description
             }),
             contentType: 'application/json',
             success: onSuccess,
