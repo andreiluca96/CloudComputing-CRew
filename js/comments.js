@@ -100,13 +100,55 @@
 
                         });
 
+                        var currentCommentaries = Comments.filter(comment => comment.File === file.sha && comment.Line == Line);
+
                         seeComments.click(function () {
-                            $('#addModal').modal('show');
-                            File = file.sha;
+                            $('#seeModal').modal('show');
+
+                            console.log(Comments);
+
+
+                            currentCommentaries.forEach(comment => {
+                                var dateobj = new Date(comment.CommentDate);
+
+                                var month = ('0' + (dateobj.getMonth() + 1)).slice(-2);
+                                var date = ('0' + dateobj.getDate()).slice(-2);
+                                var year = dateobj.getFullYear();
+                                var shortDate = year + '-' + month + '-' + date;
+
+
+                                const wrapperDiv = $("<div/>").attr("class", "list-group-item list-group-item-action flex-column align-items-start");
+                                wrapperDiv.append($("<div/>").addClass("d-flex w-100 justify-content-between").append($("<h5/>").addClass("mb-1").text(shortDate)));
+                                wrapperDiv.append($("<p/>").addClass("mb-1").text(comment.Content));
+
+                                wrapperDiv.append($("<small/>").css("margin-left","40%").text("by " + comment.Username));
+                                // $("#commentsList").append($("<div/>").attr("class", "list-group-item").text(comment.Content));
+
+                                $('#commentsList').append(wrapperDiv);
+                            });
+
+
+                            // <div class="d-flex w-100 justify-content-between">
+                            //         <h5 class="mb-1">List group item heading</h5>
+                            //     <small>3 days ago</small>
+                            //     </div>
+
+                            // <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+                            //         <div class="d-flex w-100 justify-content-between">
+                            //         <h5 class="mb-1">List group item heading</h5>
+                            //     <small>3 days ago</small>
+                            //     </div>
+                            //     <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                            //     <small>Donec id elit non mi porta.</small>
+                            //     </a>
+
 
                         });
 
-                        $(this).append(seeComments);
+                        if (currentCommentaries.length != 0) {
+                            $(this).append(seeComments);
+                        }
+
                         $(this).append(addComments);
                     }, function () {
                         $(".comment", this).remove();
@@ -154,7 +196,7 @@
                 Authorization: authToken
             },
             contentType: 'application/json',
-            success: function(result) {
+            success: function (result) {
                 Comments = result;
             },
             error: onFailure
