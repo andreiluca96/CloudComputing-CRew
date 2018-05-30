@@ -2,7 +2,10 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 /*basic reset*/
-* {margin: 0; padding: 0;}
+* {
+    margin: 0;
+    padding: 0;
+}
 
 html {
     height: 100%;
@@ -16,12 +19,14 @@ body {
     background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
     background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
+
 /*form styles*/
 #msform {
     margin: 50px auto;
     text-align: center;
     position: relative;
 }
+
 #msform fieldset {
     background: white;
     border: 0 none;
@@ -35,10 +40,12 @@ body {
     /*stacking fieldsets above each other*/
     position: relative;
 }
+
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
     display: none;
 }
+
 /*inputs*/
 #msform input, #msform textarea {
     padding: 15px;
@@ -51,6 +58,7 @@ body {
     color: #2C3E50;
     font-size: 13px;
 }
+
 /*buttons*/
 #msform .action-button {
     width: 100px;
@@ -63,9 +71,11 @@ body {
     padding: 10px 5px;
     margin: 10px 5px;
 }
+
 #msform .action-button:hover, #msform .action-button:focus {
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
+
 /*headings*/
 .fs-title {
     font-size: 15px;
@@ -73,12 +83,14 @@ body {
     color: #2C3E50;
     margin-bottom: 10px;
 }
+
 .fs-subtitle {
     font-weight: normal;
     font-size: 13px;
     color: #666;
     margin-bottom: 20px;
 }
+
 /*progressbar*/
 #progressbar {
     margin-bottom: 30px;
@@ -86,6 +98,7 @@ body {
     /*CSS counters to number the steps*/
     counter-reset: step;
 }
+
 #progressbar li {
     list-style-type: none;
     color: white;
@@ -95,6 +108,7 @@ body {
     float: left;
     position: relative;
 }
+
 #progressbar li:before {
     content: counter(step);
     counter-increment: step;
@@ -107,6 +121,7 @@ body {
     border-radius: 3px;
     margin: 0 auto 5px auto;
 }
+
 /*progressbar connectors*/
 #progressbar li:after {
     content: '';
@@ -118,13 +133,15 @@ body {
     top: 9px;
     z-index: -1; /*put it behind the numbers*/
 }
+
 #progressbar li:first-child:after {
     /*connector not needed before the first step*/
     content: none;
 }
+
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-#progressbar li.active:before,  #progressbar li.active:after{
+#progressbar li.active:before, #progressbar li.active:after {
     background: #27AE60;
     color: white;
 }
@@ -135,13 +152,14 @@ body {
 }
 
 .line {
-    white-space:pre;
-    text-align:left;
+    white-space: pre;
+    text-align: left;
 }
 
 .addition {
     background-color: #f1f8ff;
 }
+
 .deletion {
     background-color: #ffeef0;
 }
@@ -152,4 +170,14 @@ body {
 
 textarea {
     resize: none;
+}
+
+.comment {
+    position: absolute;
+    top: 3px;
+    right: 0;
+}
+
+.comment:hover {
+    color: #c850c0;
 }

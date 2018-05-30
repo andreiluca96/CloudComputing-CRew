@@ -46,6 +46,46 @@
 <div id="accordion">
 </div>
 
+<!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="commentYourself">Comment on this line</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="descriptionTextareaId">Enter your comment</label>
+                    <textarea class="form-control" id="descriptionTextareaId" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="addCommentButton" class="btn btn-primary">Add comment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- See Modal -->
+<div class="modal fade" id="seeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="commentHeader">Comments on this line</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--===============================================================================================-->
 <script src="js/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->

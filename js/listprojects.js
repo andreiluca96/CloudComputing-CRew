@@ -58,8 +58,11 @@ WildRydes.map = WildRydes.map || {};
         $("#card-wrapper").empty();
         result.forEach(item => {
             console.log(item);
+
+            const id = item.ProjectId;
+
             var card = $("<div/>").attr("class", "card transition");
-            var link = $("<a/>").attr({"class": "cta", "href": "#"}).text("See CodeReview");
+            var link = $("<a/>").attr({"class": "cta", "href": `comments.html?id=${id}`}).text("See CodeReview");
             var onClickDiv = $("<div/>").attr("class", "cta-container transition");
             var cardCircleTransition = $("<div/>")
                 .attr("class", "card_circle transition")
